@@ -9,11 +9,13 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    var mapHasCenteredOnce = false
     
     let locationManager = CLLocationManager()
+    
     
     var geoFire: GeoFire!
     
@@ -38,9 +40,39 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
 }
     
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        
+        if status == .authorizedWhenInUse {
+        mapView.showsUserLocation = true
+    }
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000,2000)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+       
+        if let loc = userLocation.location {
+            
+            if !mapHasCenteredOnce {
+                centerMapOnLocation(location: loc)
+                mapHasCenteredOnce = true
+                
+                //Only centers the app when screen first loads
+            }
+            
+        }
+    
+    }
 
-        
-        
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
