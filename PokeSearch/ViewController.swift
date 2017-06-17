@@ -98,12 +98,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         _ = circleQuery?.observe(GFEventType.keyEntered, with: { (key, location) in
             
+            if let key = key, let location = location {
+                let anno = PokeAnnotation(coordinate: location.coordinate, pokemonNumber: Int(key)!)
+                self.mapView.addAnnotation(anno)
+                
+            }
         
     })
         
     }
     
     @IBAction func spotRandomPokemon(_ sender: Any) {
+        
+        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        
+        let rand = arc4random_uniform(150) + 1
+        
+        createSighting(forLocation: loc, withPokemon: Int(rand))
+        
+        
     }
 
 }
