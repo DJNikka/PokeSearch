@@ -18,6 +18,7 @@
 		6351D00D1EF4DCA400D5A4E1 /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351D0061EF4DCA400D5A4E1 /* GFGeoHash.m */; };
 		6351D00E1EF4DCA400D5A4E1 /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351D0081EF4DCA400D5A4E1 /* GFGeoHashQuery.m */; };
 		6351D00F1EF4DCA400D5A4E1 /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351D00A1EF4DCA400D5A4E1 /* GFQuery.m */; };
+		63FFCCF81EF5F5A700F4B780 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFCCF71EF5F5A700F4B780 /* PokeAnnotation.swift */; };
 		ABBFEA7F663674DDDA0E53B1 /* Pods_PokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E3AA75592594C32459F5ED /* Pods_PokeSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		6351D0091EF4DCA400D5A4E1 /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
 		6351D00A1EF4DCA400D5A4E1 /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
 		6351D0101EF4DD4400D5A4E1 /* PokeSearch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokeSearch-Bridging-Header.h"; sourceTree = "<group>"; };
+		63FFCCF71EF5F5A700F4B780 /* PokeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 		959AA0CBC974EDB4F1E2D2F1 /* Pods-PokeSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeSearch/Pods-PokeSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		DBB85476D66569162A88C8AD /* Pods-PokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeSearch/Pods-PokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,15 +103,17 @@
 		6351CFE41EF4D8CA00D5A4E1 /* PokeSearch */ = {
 			isa = PBXGroup;
 			children = (
+				63FFCCF61EF5F54F00F4B780 /* Model */,
+				63FFCCF51EF5F54A00F4B780 /* View */,
+				63FFCCF41EF5F54100F4B780 /* Controller */,
 				6351CFF91EF4DCA400D5A4E1 /* GeoFire */,
-				6351CFF71EF4DA2800D5A4E1 /* GoogleService-Info.plist */,
 				6351CFE51EF4D8CA00D5A4E1 /* AppDelegate.swift */,
-				6351CFE71EF4D8CA00D5A4E1 /* ViewController.swift */,
-				6351CFE91EF4D8CA00D5A4E1 /* Main.storyboard */,
-				6351CFEC1EF4D8CA00D5A4E1 /* Assets.xcassets */,
-				6351CFEE1EF4D8CB00D5A4E1 /* LaunchScreen.storyboard */,
-				6351CFF11EF4D8CB00D5A4E1 /* Info.plist */,
 				6351D0101EF4DD4400D5A4E1 /* PokeSearch-Bridging-Header.h */,
+				6351CFF71EF4DA2800D5A4E1 /* GoogleService-Info.plist */,
+				6351CFF11EF4D8CB00D5A4E1 /* Info.plist */,
+				6351CFEC1EF4D8CA00D5A4E1 /* Assets.xcassets */,
+				6351CFE91EF4D8CA00D5A4E1 /* Main.storyboard */,
+				6351CFEE1EF4D8CB00D5A4E1 /* LaunchScreen.storyboard */,
 			);
 			path = PokeSearch;
 			sourceTree = "<group>";
@@ -150,6 +154,29 @@
 				6351D00A1EF4DCA400D5A4E1 /* GFQuery.m */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		63FFCCF41EF5F54100F4B780 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6351CFE71EF4D8CA00D5A4E1 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		63FFCCF51EF5F54A00F4B780 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		63FFCCF61EF5F54F00F4B780 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63FFCCF71EF5F5A700F4B780 /* PokeAnnotation.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6351D00C1EF4DCA400D5A4E1 /* GFBase32Utils.m in Sources */,
+				63FFCCF81EF5F5A700F4B780 /* PokeAnnotation.swift in Sources */,
 				6351CFE81EF4D8CA00D5A4E1 /* ViewController.swift in Sources */,
 				6351D00D1EF4DCA400D5A4E1 /* GFGeoHash.m in Sources */,
 				6351CFE61EF4D8CA00D5A4E1 /* AppDelegate.swift in Sources */,
