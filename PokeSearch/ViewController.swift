@@ -71,12 +71,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     }
 
-
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        var annotationView: MKAnnotationView?
+        
+        if annotation.isKind(of: MKUserLocation.self) {
+        annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
+        
+        annotationView?.image = UIImage(named: "ash")
+        
+    }
+        return annotationView
     }
 
     @IBAction func spotRandomPokemon(_ sender: Any) {
