@@ -32,6 +32,9 @@
                                     <constraint firstAttribute="height" constant="50" id="rd8-CB-Uzx"/>
                                 </constraints>
                                 <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <action selector="spotRandomPokemon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="svG-Lh-0Un"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,6 +47,9 @@
                             <constraint firstItem="2Sg-du-DcD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tk4-Al-FPp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="2Sg-du-DcD" id="YTi-9c-MFK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
